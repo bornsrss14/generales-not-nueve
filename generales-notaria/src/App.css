@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.App {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-minimal {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-minimal:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.btn-minimal:focus {
+  outline: none;
+  background-color: #e0e0e0;
+}
+
+.container-generales {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  padding: 4rem;
+  gap: 0.5rem;
+}
+
+.input-simple {
+  width: 100%;
+  max-width: fit-content;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #333;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-simple:focus {
+  border-color: #888;
+  box-shadow: 0 0 0 3px rgba(100, 100, 255, 0.1); /* foco suave */
+}
+
+.select-simple {
+  width: 100%;
+  max-width: fit-content;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  outline: none;
+  appearance: none; /* quita estilo nativo en algunos navegadores */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23333' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.select-simple:focus {
+  border-color: #888;
+  box-shadow: 0 0 0 3px rgba(100, 100, 255, 0.1);
+}
+
+.day-month-year-container {
+  display: flex;
+  gap: 1rem;
+}
+.gap-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.64rem;
+}
+
+.p-4 {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+.date-birth {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.question {
+  font-weight: 700;
+  color: #333;
+  font-size: 1.034rem;
+}
+.domicilioYVecino {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
