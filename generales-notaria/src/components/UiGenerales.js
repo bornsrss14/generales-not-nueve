@@ -1,24 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 
-export const UiGenerales = ({
-  datos,
-  children,
-  genero,
-  originariaYVecina,
-  día,
-  mes,
-  año,
-  empleo,
-  estadoCivil,
-  domicilio,
-  cp,
-  vecino,
-  originario,
-  numeroReverso,
-  curp,
-  rfc,
-  fullName,
-}) => {
+export const UiGenerales = React.forwardRef(({ datos, children }, ref) => {
   function convertOcrToString(ocr) {
     const mapeoNumeros = {
       0: "cero",
@@ -241,10 +223,9 @@ export const UiGenerales = ({
 
   // 🧪 Test
   console.log(numeroATexto(94472));
-
   return (
     <div className="container-generales">
-      <p>
+      <p ref={ref}>
         {`${datos.fullName.toUpperCase()}.-Mexican${
           datos.genero
         } por nacimiento, ${
@@ -274,10 +255,10 @@ export const UiGenerales = ({
         Servicio de Administración Tributaria.- - - - - - - - - - - - - - - - -
         - - -
         `}
-        {children}
       </p>
+      {children}
     </div>
   );
-};
+});
 
 export default UiGenerales;

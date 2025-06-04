@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useRef } from "react";
 import UiGenerales from "./components/UiGenerales";
 import SeleccionGenerales from "./components/SeleccionGenerales";
 import { useState } from "react";
@@ -30,6 +31,16 @@ function App() {
       [field]: value,
     }));
   }
+  const refTexto = useRef();
+  function copyToClipboard() {
+    const paragrapgh = refTexto.current.innerText;
+    if (paragrapgh) {
+      navigator.clipboard
+        .writeText(paragrapgh)
+        .then(() => alert("Texto copiado"))
+        .catch((err) => console.error("Error al copiar", err));
+    }
+  }
   return (
     <div className="App">
       <SeleccionGenerales datos={datos} onHandleSetData={handleSetData} />
@@ -58,9 +69,11 @@ function App() {
           <button className="btn-minimal">Reset</button>
         </div>
       </UiGenerales> */}
-      <UiGenerales datos={datos}>
+      <UiGenerales ref={refTexto} datos={datos}>
         <div className="buttons">
-          <button className="btn-minimal">Copiar</button>
+          <button onClick={copyToClipboard} className="btn-minimal">
+            Copiar
+          </button>
           <button onClick={handleResetValues} className="btn-minimal">
             Reset
           </button>
