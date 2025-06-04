@@ -22,17 +22,11 @@
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .btn-minimal:hover {
   background-color: #f0f0f0;
   color: #000;
-}
-
-.btn-minimal:focus {
-  outline: none;
-  background-color: #e0e0e0;
 }
 
 .container-generales {

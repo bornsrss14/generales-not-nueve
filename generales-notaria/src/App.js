@@ -2,25 +2,28 @@ import "./App.css";
 import UiGenerales from "./components/UiGenerales";
 import SeleccionGenerales from "./components/SeleccionGenerales";
 import { useState } from "react";
-
+const valoresIniciales = {
+  fullName: "",
+  genero: "",
+  originariaYVecina: null,
+  vecino: "",
+  originTown: "",
+  day: "",
+  month: "",
+  year: "",
+  civilStatus: "",
+  occupation: "",
+  currentAddress: "",
+  postalCode: "",
+  backNumbers: "",
+  curp: "",
+  rfc: "",
+};
 function App() {
-  const [datos, setDatos] = useState({
-    fullName: "",
-    genero: "",
-    originariaYVecina: null,
-    vecino: "",
-    originTown: "",
-    day: "",
-    month: "",
-    year: "",
-    civilStatus: "",
-    occupation: "",
-    currentAddress: "",
-    postalCode: "",
-    backNumbers: "",
-    curp: "",
-    rfc: "",
-  });
+  const [datos, setDatos] = useState(valoresIniciales);
+  const handleResetValues = () => {
+    setDatos(valoresIniciales);
+  };
   function handleSetData(field, value) {
     setDatos((prevDatos) => ({
       ...prevDatos,
@@ -58,7 +61,9 @@ function App() {
       <UiGenerales datos={datos}>
         <div className="buttons">
           <button className="btn-minimal">Copiar</button>
-          <button className="btn-minimal">Reset</button>
+          <button onClick={handleResetValues} className="btn-minimal">
+            Reset
+          </button>
         </div>
       </UiGenerales>
     </div>
