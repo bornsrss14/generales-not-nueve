@@ -248,7 +248,7 @@ export const UiGenerales = React.forwardRef(
               {datos.civilStatus}
               {datos.genero}, {datos.occupation}, con domicilio en{" "}
               {datos.currentAddress},{" "}
-              {datos.originariaYVecina ? "" : `${datos.vecino}`} Código Postal{" "}
+              {datos.originariaYVecina ? "" : `${datos.vecino}`}, Código Postal{" "}
               {datos.postalCode} ({numeroATexto(datos.postalCode)}), quien se
               identifica con credencial para votar con fotografía y números al
               reverso {convertOcrToString(datos.backNumbers)}, expedida por el
@@ -279,12 +279,12 @@ export const UiGenerales = React.forwardRef(
               {datos.civilStatus}
               {datos.genero}, {datos.occupation}, con domicilio en{" "}
               {datos.currentAddress},{" "}
-              {datos.originariaYVecina ? "" : `${datos.vecino}`} Código Postal{" "}
+              {datos.originariaYVecina ? "" : `${datos.vecino}`}, Código Postal{" "}
               {datos.postalCode} ({numeroATexto(datos.postalCode)}), quien se
               identifica con el Pasaporte Mexicano con el número{" "}
               <strong>{datos.backNumbers}</strong> (
               {procesarCURP(datos.backNumbers)}), expedido por la Secretaria de
-              Relaciones Exteriores, y con Clave Única de Registro de Población
+              Relaciones Exteriores, y con Clave Única de Registro de Población{" "}
               <strong>{datos.curp.toUpperCase()}</strong> (
               {procesarCURP(datos.curp)}
               ), expedida por la Secretaría de Gobernación, y con Clave Federal

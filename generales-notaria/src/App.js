@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import UiGenerales from "./components/UiGenerales";
 import SeleccionGenerales from "./components/SeleccionGenerales";
 import { useState } from "react";
+
 const valoresIniciales = {
   fullName: "",
   genero: "",
@@ -48,20 +49,23 @@ function App() {
         .catch((err) => console.error("Error al copiar", err));
     }
   }
+  function toggleCard() {
+    setPassOrIne((prev) => (prev === "ine" ? "pass" : "ine"));
+  }
   return (
     <div className="main-app">
-      <button className="tramite">
+      <button onClick={toggleCard} className="tramite">
         {passOrIne === "ine" ? (
           <img
             alt="passport"
             src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/notary-nine%2Fpassport-mexican-copy.png?alt=media&token=818a23a8-4011-40e9-a292-482e6826470b"
-            title="tipo"
+            title="Cambiar a pasaporte"
           />
         ) : (
           <img
             alt="passport"
             src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/notary-nine%2Fine-modelo-dos-copy.png?alt=media&token=a4538ddd-3eae-47fc-a3f6-ed5321989c43"
-            title="tipo"
+            title="Cambiar a INE"
           />
         )}
       </button>
