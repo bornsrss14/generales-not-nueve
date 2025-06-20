@@ -234,7 +234,7 @@ export const UiGenerales = React.forwardRef(({ datos, children }, ref) => {
   return (
     <div className="container-generales">
       <p className="texto-justificado" ref={ref}>
-        (x).-
+        x).-
         <strong>{datos.fullName.toUpperCase()}</strong>
         .- Mexican{datos.genero} por nacimiento,{" "}
         {datos.originariaYVecina
