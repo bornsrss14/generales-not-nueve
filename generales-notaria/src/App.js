@@ -23,6 +23,7 @@ const valoresIniciales = {
 function App() {
   const [datos, setDatos] = useState(valoresIniciales);
   const [passOrIne, setPassOrIne] = useState("pass");
+  const [showBanner, setShowBanner] = useState(false);
   const handleResetValues = () => {
     setDatos(valoresIniciales);
   };
@@ -38,7 +39,12 @@ function App() {
     if (paragrapgh) {
       navigator.clipboard
         .writeText(paragrapgh)
-        .then(() => alert("Texto copiado"))
+        .then(
+          () => setShowBanner(true),
+          setTimeout(() => {
+            setShowBanner(false);
+          }, 1000)
+        )
         .catch((err) => console.error("Error al copiar", err));
     }
   }
@@ -98,6 +104,15 @@ function App() {
           </div>
         </UiGenerales>
       </div>
+      {showBanner && (
+        <div
+          value={showBanner}
+          className={showBanner ? `banner` : `banner slide-bottom`}
+        >
+          {" "}
+          <p> Texto copiado 📋</p>
+        </div>
+      )}
     </div>
   );
 }
