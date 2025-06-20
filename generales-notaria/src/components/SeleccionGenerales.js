@@ -237,21 +237,6 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
           className="input-simple"
         />
       </div>
-
-      <div className="p-4">
-        <label htmlFor="curp" className="question">
-          CURP:
-        </label>
-        <input
-          id="curp"
-          type="text"
-          value={datos.curp}
-          onChange={(e) => onHandleSetData("curp", e.target.value)}
-          placeholder="FUGR990621..."
-          className="input-simple"
-        />
-      </div>
-
       <div className="p-4">
         <label htmlFor="rfc" className="question">
           RFC:
@@ -261,6 +246,19 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
           type="text"
           value={datos.rfc}
           onChange={(e) => onHandleSetData("rfc", e.target.value)}
+          placeholder="FUGR990621..."
+          className="input-simple"
+        />
+      </div>
+      <div className="p-4">
+        <label htmlFor="curp" className="question">
+          CURP:
+        </label>
+        <input
+          id="curp"
+          type="text"
+          value={datos.curp}
+          onChange={(e) => onHandleSetData("curp", e.target.value)}
           placeholder="FUGR990621..."
           className="input-simple"
         />

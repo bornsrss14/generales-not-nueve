@@ -3,7 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
+.main-app {
+  display: flex;
+  flex-direction: column;
+}
 .App {
+  margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(2, 37rem);
   justify-content: center;
@@ -125,4 +130,21 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="number"] {
   -moz-appearance: textfield;
+}
+.tramite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 6rem;
+  top: 2rem;
+  padding: 0.4rem 0.34rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.tramite img {
+  height: 3rem;
+  max-height: 4rem;
 }

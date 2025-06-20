@@ -22,6 +22,7 @@ const valoresIniciales = {
 };
 function App() {
   const [datos, setDatos] = useState(valoresIniciales);
+  const [passOrIne, setPassOrIne] = useState("pass");
   const handleResetValues = () => {
     setDatos(valoresIniciales);
   };
@@ -42,9 +43,26 @@ function App() {
     }
   }
   return (
-    <div className="App">
-      <SeleccionGenerales datos={datos} onHandleSetData={handleSetData} />
-      {/* 
+    <div className="main-app">
+      <button className="tramite">
+        {passOrIne === "pass" ? (
+          <img
+            alt="passport"
+            src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/notary-nine%2Fpassport-mexican-copy.png?alt=media&token=818a23a8-4011-40e9-a292-482e6826470b"
+            title="tipo"
+          />
+        ) : (
+          <img
+            alt="passport"
+            src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/notary-nine%2Fine-modelo-dos-copy.png?alt=media&token=a4538ddd-3eae-47fc-a3f6-ed5321989c43"
+            title="tipo"
+          />
+        )}
+      </button>
+
+      <div className="App">
+        <SeleccionGenerales datos={datos} onHandleSetData={handleSetData} />
+        {/* 
       <UiGenerales
         genero={"a"}
         originariaYVecina={true}
@@ -69,16 +87,17 @@ function App() {
           <button className="btn-minimal">Reset</button>
         </div>
       </UiGenerales> */}
-      <UiGenerales ref={refTexto} datos={datos}>
-        <div className="buttons">
-          <button onClick={copyToClipboard} className="btn-minimal">
-            Copiar
-          </button>
-          <button onClick={handleResetValues} className="btn-minimal">
-            Reset
-          </button>
-        </div>
-      </UiGenerales>
+        <UiGenerales ref={refTexto} datos={datos}>
+          <div className="buttons">
+            <button onClick={copyToClipboard} className="btn-minimal">
+              Copiar
+            </button>
+            <button onClick={handleResetValues} className="btn-minimal">
+              Reset
+            </button>
+          </div>
+        </UiGenerales>
+      </div>
     </div>
   );
 }
