@@ -39,6 +39,10 @@ export const UiGenerales = React.forwardRef(({ datos, children }, ref) => {
       13: "trece",
       14: "catorce",
       15: "quince",
+      16: "dieciséis",
+      17: "diecisiete",
+      18: "dieciocho",
+      19: "diecinueve",
       20: "veinte",
       21: "veintiuno",
       22: "veintidós",
@@ -151,6 +155,10 @@ export const UiGenerales = React.forwardRef(({ datos, children }, ref) => {
       13: "trece",
       14: "catorce",
       15: "quince",
+      16: "dieciséis",
+      17: "diecisiete",
+      18: "dieciocho",
+      19: "diecinueve",
       20: "veinte",
       30: "treinta",
       40: "cuarenta",
@@ -225,8 +233,8 @@ export const UiGenerales = React.forwardRef(({ datos, children }, ref) => {
   console.log(numeroATexto(94472));
   return (
     <div className="container-generales">
-      <p ref={ref}>
-        {`${datos.fullName.toUpperCase()}.-Mexican${
+      <p className="texto-justificado" ref={ref}>
+        {`x).-${datos.fullName.toUpperCase()}.-Mexican${
           datos.genero
         } por nacimiento, ${
           datos.originariaYVecina

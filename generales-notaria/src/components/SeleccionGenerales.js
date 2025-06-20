@@ -91,20 +91,37 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
         </label>
       </div>
       <div className="domicilioYVecino">
-        <div className="p-4">
-          <label className="question">Ciudad de nacimiento</label>
-          <input
-            placeholder="Ej. Córdoba, Veracruz"
-            id="origen"
-            value={datos.originTown}
-            type="text"
-            className="input-simple"
-            onChange={(e) => onHandleSetData("originTown", e.target.value)}
-          />
-        </div>
-        {!datos.originariaYVecina && (
-          <VecinoYOriginario datos={datos} onHandleSetData={onHandleSetData} />
-        )}
+        <div className="p-4"></div>
+        {datos.originariaYVecina !== null &&
+          (datos.originariaYVecina ? (
+            <>
+              <label className="question">Ciudad de nacimiento</label>
+              <input
+                placeholder="Ej. Córdoba, Veracruz"
+                id="origen"
+                value={datos.originTown}
+                type="text"
+                className="input-simple"
+                onChange={(e) => onHandleSetData("originTown", e.target.value)}
+              />
+            </>
+          ) : (
+            <>
+              <label className="question">Ciudad de nacimiento</label>
+              <input
+                placeholder="Ej. Córdoba, Veracruz"
+                id="origen"
+                value={datos.originTown}
+                type="text"
+                className="input-simple"
+                onChange={(e) => onHandleSetData("originTown", e.target.value)}
+              />
+              <VecinoYOriginario
+                datos={datos}
+                onHandleSetData={onHandleSetData}
+              />
+            </>
+          ))}
       </div>
 
       <div className="p-4 date-birth">
@@ -216,7 +233,7 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
         </label>
         <input
           id="cp-address"
-          type="text"
+          type="number"
           value={datos.postalCode}
           onChange={(e) => onHandleSetData("postalCode", e.target.value)}
           placeholder="94478"
@@ -229,10 +246,10 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
         </label>
         <input
           id="cp-address"
-          type="text"
+          type="number"
           value={datos.backNumbers}
           onChange={(e) => onHandleSetData("backNumbers", e.target.value)}
-          placeholder="1XXXXX713897"
+          placeholder="1548106713897"
           className="input-simple"
         />
       </div>
