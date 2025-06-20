@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="main-app">
       <button className="tramite">
-        {passOrIne === "pass" ? (
+        {passOrIne === "ine" ? (
           <img
             alt="passport"
             src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/notary-nine%2Fpassport-mexican-copy.png?alt=media&token=818a23a8-4011-40e9-a292-482e6826470b"
@@ -67,7 +67,11 @@ function App() {
       </button>
 
       <div className="App">
-        <SeleccionGenerales datos={datos} onHandleSetData={handleSetData} />
+        <SeleccionGenerales
+          passOrIne={passOrIne}
+          datos={datos}
+          onHandleSetData={handleSetData}
+        />
         {/* 
       <UiGenerales
         genero={"a"}
@@ -93,7 +97,7 @@ function App() {
           <button className="btn-minimal">Reset</button>
         </div>
       </UiGenerales> */}
-        <UiGenerales ref={refTexto} datos={datos}>
+        <UiGenerales passOrIne={passOrIne} ref={refTexto} datos={datos}>
           <div className="buttons">
             <button onClick={copyToClipboard} className="btn-minimal">
               Copiar
