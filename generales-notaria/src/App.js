@@ -22,7 +22,7 @@ const valoresIniciales = {
 };
 function App() {
   const [datos, setDatos] = useState(valoresIniciales);
-  const [passOrIne, setPassOrIne] = useState("pass");
+  const [passOrIne, setPassOrIne] = useState("ine");
   const [showBanner, setShowBanner] = useState(false);
   const handleResetValues = () => {
     setDatos(valoresIniciales);
