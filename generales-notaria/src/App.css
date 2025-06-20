@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 .App {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
   display: grid;
   grid-template-columns: repeat(2, 37rem);
   justify-content: center;
@@ -33,6 +33,10 @@
 .btn-minimal:hover {
   background-color: #f0f0f0;
   color: #000;
+}
+.titulo {
+  color: #424242;
+  margin-bottom: 1rem;
 }
 
 .container-generales {
@@ -131,17 +135,28 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-.tramite {
+.div-cambio {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
   right: 6rem;
-  top: 2rem;
+  top: 1.4rem;
+}
+.min-font {
+  font-size: 0.64rem;
+  margin-bottom: 0.3rem;
+}
+.tramite {
   padding: 0.4rem 0.34rem;
   border: none;
   cursor: pointer;
   border-radius: 10px;
+  background-color: #cccccc32;
+}
+.tramite:hover {
+  background-color: #234fff67;
 }
 
 .tramite img {

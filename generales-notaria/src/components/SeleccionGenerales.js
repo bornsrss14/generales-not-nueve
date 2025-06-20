@@ -30,6 +30,14 @@ export const SeleccionGenerales = ({ passOrIne, datos, onHandleSetData }) => {
   );
   return (
     <div className="container-generales">
+      <h3 className="titulo">
+        {" "}
+        SE IDENTIFICA CON{" "}
+        <strong style={{ color: "blue" }}>
+          {" "}
+          {passOrIne === "ine" ? "INE" : "PASAPORTE"}
+        </strong>
+      </h3>
       {passOrIne === "ine" && (
         <>
           <div className="p-4">
@@ -479,7 +487,7 @@ export const SeleccionGenerales = ({ passOrIne, datos, onHandleSetData }) => {
           </div>
           <div className="p-4">
             <label
-              style={{ color: "red" }}
+              style={{ color: "blue" }}
               htmlFor="num-reverso"
               className="question"
             >
