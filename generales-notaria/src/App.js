@@ -43,7 +43,7 @@ function App() {
           () => setShowBanner(true),
           setTimeout(() => {
             setShowBanner(false);
-          }, 1000)
+          }, 1500)
         )
         .catch((err) => console.error("Error al copiar", err));
     }
