@@ -1,23 +1,6 @@
 import VecinoYOriginario from "../core/VecinoYOriginario";
 
 export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
-  {
-    /* const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
-  const [sameTown, setSameTown] = useState(true);
-  const [genero, setGenero] = useState("");
-  const [civilStatus, setCivilStatus] = useState("");
-  const [occupation, setOccupation] = useState("");
-  const [currentAddress, setCurrentAddress] = useState("");
-  const [cp, setCp] = useState("");
-  const [backNumbers, setBackNumbers] = useState("");
-  const [curp, setCurp] = useState("");
-  const [rfc, setRfc] = useState("");
-  const [originTown, setOriginTown] = useState("");
-  const [fullName, setFullName] = useState(); */
-  }
-
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const months = [
     "Enero",
@@ -70,9 +53,7 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
         </select>
       </div>
       <div className="p-4">
-        <label className="question">
-          ¿Originario y vecino de la misma ciudad?
-        </label>
+        <label className="question">¿Nació y vive en la misma ciudad?</label>
         <label className="flex">
           <input
             onChange={() => onHandleSetData("originariaYVecina", true)}
@@ -91,10 +72,9 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
         </label>
       </div>
       <div className="domicilioYVecino">
-        <div className="p-4"></div>
         {datos.originariaYVecina !== null &&
           (datos.originariaYVecina ? (
-            <>
+            <div className="p-4">
               <label className="question">Ciudad de nacimiento</label>
               <input
                 placeholder="Ej. Córdoba, Veracruz"
@@ -104,23 +84,27 @@ export const SeleccionGenerales = ({ datos, onHandleSetData }) => {
                 className="input-simple"
                 onChange={(e) => onHandleSetData("originTown", e.target.value)}
               />
-            </>
+            </div>
           ) : (
-            <>
-              <label className="question">Ciudad de nacimiento</label>
-              <input
-                placeholder="Ej. Córdoba, Veracruz"
-                id="origen"
-                value={datos.originTown}
-                type="text"
-                className="input-simple"
-                onChange={(e) => onHandleSetData("originTown", e.target.value)}
-              />
+            <div className="domicilioYVecino">
+              <div className="p-4">
+                <label className="question">Ciudad de nacimiento</label>
+                <input
+                  placeholder="Ej. Córdoba, Veracruz"
+                  id="origen"
+                  value={datos.originTown}
+                  type="text"
+                  className="input-simple"
+                  onChange={(e) =>
+                    onHandleSetData("originTown", e.target.value)
+                  }
+                />
+              </div>
               <VecinoYOriginario
                 datos={datos}
                 onHandleSetData={onHandleSetData}
               />
-            </>
+            </div>
           ))}
       </div>
 

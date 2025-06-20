@@ -234,35 +234,27 @@ export const UiGenerales = React.forwardRef(({ datos, children }, ref) => {
   return (
     <div className="container-generales">
       <p className="texto-justificado" ref={ref}>
-        {`x).-${datos.fullName.toUpperCase()}.-Mexican${
-          datos.genero
-        } por nacimiento, ${
-          datos.originariaYVecina
-            ? `originari${datos.genero} y vecin${datos.genero} de la ciudad de ${datos.originTown}`
-            : `originari${datos.genero} de la ciudad de  ${datos.originTown}`
-        }, donde nació el día ${datos.day} (${numeroATexto(datos.day)}) de ${
-          datos.month
-        } de ${datos.year} (${numeroATexto(datos.year)}), ${datos.civilStatus}${
-          datos.genero
-        }, ${datos.occupation}, con
-        domicilio en ${datos.currentAddress}, ${
-          datos.originariaYVecina ? "" : `${datos.vecino}`
-        } Código Postal ${datos.postalCode}
-        (${numeroATexto(datos.postalCode)}), quien se identifica
-        con credencial para votar con fotografía y numeros al reverso
-        ${convertOcrToString(
-          datos.backNumbers
-        )}, expedida por el instituto Nacional Electoral con Clave
-        Única de Registro de Población ${datos.curp.toUpperCase()} (${procesarCURP(
-          datos.curp
-        )}),
-        expedida por la Secretaría de Gobernación, y con Clave Federal de
-        Registro de Contribuyentes ${datos.rfc.toUpperCase()}(${procesarCURP(
-          datos.rfc
-        )}), expedida por el
-        Servicio de Administración Tributaria.- - - - - - - - - - - - - - - - -
-        - - -
-        `}
+        (x).-
+        <strong>{datos.fullName.toUpperCase()}</strong>
+        .- Mexican{datos.genero} por nacimiento,{" "}
+        {datos.originariaYVecina
+          ? `originari${datos.genero} y vecin${datos.genero} de la ciudad de ${datos.originTown}`
+          : `originari${datos.genero} de la ciudad de ${datos.originTown}`}
+        , donde nació el día {datos.day} ({numeroATexto(datos.day)}) de{" "}
+        {datos.month} de {datos.year} ({numeroATexto(datos.year)}),{" "}
+        {datos.civilStatus}
+        {datos.genero}, {datos.occupation}, con domicilio en{" "}
+        {datos.currentAddress},{" "}
+        {datos.originariaYVecina ? "" : `${datos.vecino}`} Código Postal{" "}
+        {datos.postalCode} ({numeroATexto(datos.postalCode)}), quien se
+        identifica con credencial para votar con fotografía y números al reverso{" "}
+        {convertOcrToString(datos.backNumbers)}, expedida por el Instituto
+        Nacional Electoral con Clave Única de Registro de Población{" "}
+        <strong>{datos.curp.toUpperCase()}</strong> ({procesarCURP(datos.curp)}
+        ), expedida por la Secretaría de Gobernación, y con Clave Federal de
+        Registro de Contribuyentes <strong>{datos.rfc.toUpperCase()}</strong> (
+        {procesarCURP(datos.rfc)}), expedida por el Servicio de Administración
+        Tributaria.- - - - - - - - - - - - - - - - - - - - -
       </p>
       {children}
     </div>
